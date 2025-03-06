@@ -2,6 +2,7 @@
 <rdf:RDF xmlns="https://ontologia.ibict.br/ontologias/ontogovbr/"
      xml:base="https://ontologia.ibict.br/ontologias/ontogovbr/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:cco="https://www.commoncoreontologies.org/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -18,11 +19,11 @@
         <owl:versionIRI rdf:resource="https://ontologia.ibict.br/ontologias/ontogovbr/versao/1.0.0"/>
         <dc:creator>IBICT</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-28</dc:date>
-        <dcterms:license>http://creativecommons.org/licenses/by-nc/4.0/</dcterms:license>
         <dcterms:contributor>Fernanda Farinelli</dcterms:contributor>
         <dcterms:contributor>Sara Maciel Soares</dcterms:contributor>
         <dcterms:description xml:lang="pt-br">ONTOGOVBR é uma ontologia que representa o conhecimento sobre a organização, estrutura e funcionamento da Administração Pública Brasileira. Baseia-se nos termos e conceitos do Vocabulário Controlado do Governo Eletrônico e do Vocabulário Controlado Brasileiro, bem como na Constituição Federal e em outras normas jurídicas que regulam as funções do Estado. Seu objetivo é proporcionar uma estrutura semântica para a interoperabilidade de dados governamentais, auxiliando na padronização e recuperação da informação no contexto da gestão pública.</dcterms:description>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-02-28</dcterms:issued>
+        <dcterms:license>http://creativecommons.org/licenses/by-nc/4.0/</dcterms:license>
         <dcterms:source>Constituição da República Federativa do Brasil de 1988</dcterms:source>
         <dcterms:title xml:lang="pt-br">Ontologia do Governo e da Administração Pública Brasileira</dcterms:title>
         <rdfs:comment xml:lang="pt-br">Esta é a primeira versão da ONTOGOVBR. A ontologia está em desenvolvimento e pode passar por refinamentos e expansões futuras para melhor representar a organização e o funcionamento da Administração Pública Brasileira. Contribuições e sugestões são bem-vindas.</rdfs:comment>
@@ -736,9 +737,27 @@ Where we have an annotation assertion
     
 
 
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
     <!-- http://www.w3.org/2004/02/skos/core#historyNote -->
 
     <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#historyNote"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote"/>
     
 
 
@@ -763,6 +782,30 @@ Where we have an annotation assertion
     <!-- http://xmlns.com/foaf/0.1/page -->
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/definition_source -->
+
+    <owl:AnnotationProperty rdf:about="https://www.commoncoreontologies.org/definition_source"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/is_curated_in_ontology -->
+
+    <owl:AnnotationProperty rdf:about="https://www.commoncoreontologies.org/is_curated_in_ontology"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001754 -->
+
+    <owl:AnnotationProperty rdf:about="https://www.commoncoreontologies.org/ont00001754"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001760 -->
+
+    <owl:AnnotationProperty rdf:about="https://www.commoncoreontologies.org/ont00001760"/>
     
 
 
@@ -1073,6 +1116,35 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000117 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000117">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <dc:identifier>202-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">has occurrent part</rdfs:label>
+        <skos:definition xml:lang="en">b has occurrent part c =Def c occurrent part of b</skos:definition>
+        <skos:example xml:lang="en">Mary&apos;s life has occurrent part Mary&apos;s 5th birthday</skos:example>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000121 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000121">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <dc:identifier>211-BFO</dc:identifier>
+        <rdfs:label xml:lang="en">has temporal part</rdfs:label>
+        <skos:definition xml:lang="en">b has temporal part c =Def c temporal part of b</skos:definition>
+        <skos:example xml:lang="en">Your life has temporal part the first year of your life</skos:example>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000136 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136">
@@ -1246,22 +1318,62 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000124 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000124">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0001909"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <obo:IAO_0000111>is_supported_by_data</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="pt-br">é suportado por dados</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="pt-br">
+        A relação entre a conclusão &quot;O gene tpbA está envolvido na produção de EPS&quot; e os itens de dados produzidos usando dois conjuntos de organismos, 
+        um sendo um knockout de tpbA e o outro sendo o tipo selvagem de tpbA, testado em ensaios de produção de polissacarídeos e analisado por ANOVA.
+    </obo:IAO_0000112>
+        <obo:IAO_0000112>The relation between the conclusion &quot;Gene tpbA is involved in EPS production&quot; and the data items produced using two sets of organisms, one being a tpbA knockout, the other being tpbA wildtype tested in polysacharide production assays and analyzed using an ANOVA.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="pt-br">
+        A relação entre um item de dado e uma conclusão, onde a conclusão é o resultado de um processo de interpretação de dados 
+        e o item de dado é usado como entrada para esse processo.
+    </obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">The relation between a data item and a conclusion where the conclusion is the output of a data interpreting process and the data item is used as an input to that process</obo:IAO_0000115>
+        <obo:IAO_0000117>OBI</obo:IAO_0000117>
+        <obo:IAO_0000119>OBI</obo:IAO_0000119>
+        <obo:IAO_0000119>Philly 2011 workshop</obo:IAO_0000119>
+        <obo:ONTONEO_10000002>Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label>is_supported_by_data</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é suportado por dados</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000293 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000293">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000295"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111>has specified input</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">has specified input</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="pt-br">tem entrada especificada</obo:IAO_0000111>
         <obo:IAO_0000112 xml:lang="en">see is_input_of example_of_usage</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="pt-br">ver exemplo de uso de &quot;é entrada de&quot;</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="pt-br">A propriedade inversa de &quot;é entrada especificada de&quot;</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">The inverse property of is specified input of</obo:IAO_0000115>
-        <obo:IAO_0000116>8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. This is in contrast to how &apos;has participant&apos; works.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="pt-br">
+        17/08/09: entradas especificadas de um processo não são necessariamente entradas especificadas de um processo maior do qual fazem parte. 
+        Isso contrasta com a forma como &apos;tem participante&apos; funciona.
+    </obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">
+        8/17/09: specified inputs of one process are not necessarily specified inputs of a larger process that it is part of. 
+        This is in contrast to how &apos;has participant&apos; works.
+    </obo:IAO_0000116>
         <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Larry Hunter</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Melanie Coutot</obo:IAO_0000117>
+        <obo:ONTONEO_10000002>Fernanda Farinelli</obo:ONTONEO_10000002>
         <rdfs:label xml:lang="en">has specified input</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tem entrada especificada</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1271,13 +1383,34 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000295">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111>is specified input of</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">some Autologous EBV(Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) is_input_for instance of Chromum Release Assay described at https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay</obo:IAO_0000112>
+        <obo:IAO_0000111 xml:lang="en">is specified input of</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="pt-br">é entrada especificada de</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="pt-br">
+        Algumas células B-LCL (linhagem celular de linfócitos B) transformadas por EBV (vírus Epstein-Barr) autólogas 
+        são entrada para um ensaio de liberação de cromo descrito em 
+        https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay
+    </obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">
+        Some Autologous EBV (Epstein-Barr virus)-transformed B-LCL (B lymphocyte cell line) 
+        is_input_for instance of Chromium Release Assay described at 
+        https://wiki.cbil.upenn.edu/obiwiki/index.php/Chromium_Release_assay
+    </obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A relation between a planned process and a continuant participating in that process that is not created during  the process. The presence of the continuant during the process is explicitly specified in the plan specification which the process realizes the concretization of.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">
+        A relation between a planned process and a continuant participating in that process that is not created during the process. 
+        The presence of the continuant during the process is explicitly specified in the plan specification 
+        which the process realizes the concretization of.
+    </obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="pt-br">
+        Uma relação entre um processo planejado e um continuante que participa desse processo e não é criado durante ele. 
+        A presença do continuante durante o processo é explicitamente especificada na especificação do plano, 
+        que o processo realiza como concretização.
+    </obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON:Bjoern Peters</obo:IAO_0000117>
+        <obo:ONTONEO_10000002>Fernanda Farinelli</obo:ONTONEO_10000002>
         <rdfs:label xml:lang="en">is specified input of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é entrada especificada de</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1288,21 +1421,46 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111>has specified output</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">has specified output</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="pt-br">tem saída especificada</obo:IAO_0000111>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="pt-br">A propriedade inversa de &quot;é saída especificada de&quot;</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">The inverse property of is specified output of</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Larry Hunter</obo:IAO_0000117>
         <obo:IAO_0000117>PERSON: Melanie Courtot</obo:IAO_0000117>
+        <obo:ONTONEO_10000002>Fernanda Farinelli</obo:ONTONEO_10000002>
         <rdfs:label xml:lang="en">has specified output</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tem saída especificada</rdfs:label>
     </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000312 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0000312">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000111 xml:lang="en">is specified output of</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="pt-br">é saída especificada de</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">
+        A relation between a planned process and a continuant participating in that process. 
+        The presence of the continuant at the end of the process is explicitly specified in the 
+        objective specification which the process realizes the concretization of.
+    </obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="pt-br">
+        Uma relação entre um processo planejado e um continuante que participa desse processo. 
+        A presença do continuante no final do processo é explicitamente especificada na especificação 
+        objetiva que o processo realiza como concretização.
+    </obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">Alan Ruttenberg</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON:Bjoern Peters</obo:IAO_0000117>
+        <obo:ONTONEO_10000002>Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is specified output of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é saída especificada de</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -2413,6 +2571,1246 @@ Werner suggests a solution based on &quot;Magnitudes&quot; a proposal for which 
         <rdfs:label xml:lang="en">device utilizes material</rdfs:label>
         <rdfs:label xml:lang="pt-br">dispositivo utiliza material</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/accessory_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/accessory_in">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_accessory"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:label xml:lang="en">accessory in</rdfs:label>
+        <rdfs:label xml:lang="pt-br">cúmplice em</rdfs:label>
+        <skos:definition xml:lang="en">y is_accessory_in x iff x is an instance of Process and y is an instance of Agent, such that y assists another agent in the commission of x, and y was not located at the location of x when x occurred, and y was not an agent_in x.</skos:definition>
+        <skos:definition xml:lang="pt-br">y é cúmplice em x se, e somente se, x for uma instância de Processo e y for uma instância de Agente, tal que y auxilia outro agente na execução de x, e y não estava localizado no local de x quando x ocorreu, e y não era um agente em x.</skos:definition>
+        <cco:definition_source>http://en.wikipedia.org/wiki/Accessory_(legal_term)</cco:definition_source>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/accomplice_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/accomplice_in">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_accomplice"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:label xml:lang="en">accomplice in</rdfs:label>
+        <rdfs:label xml:lang="pt-br">cúmplice ativo em</rdfs:label>
+        <skos:definition xml:lang="en">An agent a1 is accomplice_in some Processual Entity p1 iff a1 assists in the commission of p1, is located at the location of p1, but is not agent_in p1.</skos:definition>
+        <skos:definition xml:lang="pt-br">Um agente a1 é cúmplice ativo em alguma Entidade Processual p1 se, e somente se, a1 auxilia na execução de p1, está localizado no local de p1, mas não é um agente em p1.</skos:definition>
+        <cco:definition_source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/w/index.php?title=Accomplice&amp;oldid=1002047204</cco:definition_source>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/affects -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/affects">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_affected_by"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:label xml:lang="pt-br">afeta</rdfs:label>
+        <rdfs:label xml:lang="en">affects</rdfs:label>
+        <skos:definition xml:lang="pt-br">x afeta y se, e somente se, x for uma instância de Processo e y for uma instância de Continuante, e x influenciar y de alguma maneira, geralmente produzindo uma mudança em y.</skos:definition>
+        <skos:definition xml:lang="en">x affects y iff x is an instance of Process and y is an instance of Continuant, and x influences y in some manner, most often by producing a change in y.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/agent_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/agent_in">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_agent"/>
+        <rdfs:label xml:lang="en">agent in</rdfs:label>
+        <rdfs:label xml:lang="pt-br">agente em</rdfs:label>
+        <skos:definition xml:lang="en">x agent_in y iff y is an instance of Process and x is an instance of Agent, such that x is causally active in y.</skos:definition>
+        <skos:definition xml:lang="pt-br">x é agente em y se, e somente se, y for uma instância de Processo e x for uma instância de Agente, tal que x esteja causalmente ativo em y.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/caused_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/caused_by">
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_cause_of"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
+        <rdfs:label xml:lang="pt-br">causado por</rdfs:label>
+        <rdfs:label xml:lang="en">caused by</rdfs:label>
+        <skos:definition xml:lang="en">x caused_by y iff x and y are instances of Occurrent, and x is a consequence of y.</skos:definition>
+        <skos:definition xml:lang="pt-br">x é causado por y se, e somente se, x e y forem instâncias de Ocorrente, e x for uma consequência de y.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/coincides_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/coincides_with">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/connected_with"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:label xml:lang="pt-br">coincide com</rdfs:label>
+        <rdfs:label xml:lang="en">coincides with</rdfs:label>
+        <skos:definition xml:lang="en">An immaterial entity im1 coincides with some immaterial entity im2 iff im1 is a spatial part of im2 and im2 is a spatial part of im1.</skos:definition>
+        <skos:definition xml:lang="pt-br">Uma entidade imaterial im1 coincide com alguma entidade imaterial im2 se, e somente se, im1 for uma parte espacial de im2 e im2 for uma parte espacial de im1.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/GeospatialOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/condition_described_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/condition_described_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_subject_of"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/describes_condition"/>
+        <rdfs:label xml:lang="en">condition described by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">condição descrita por</rdfs:label>
+        <skos:definition xml:lang="en">c condition_described_by p iff p is an instance of a Performance Specification, and p has part d, and d is an instance of a Descriptive Information Content Entity, and p prescribes an entity s, and d describes c, and c is an entity that is causally relevant to s existing as prescribed by p.</skos:definition>
+        <skos:definition xml:lang="pt-br">c é uma condição descrita por p se, e somente se, p for uma instância de uma Especificação de Desempenho, e p tiver uma parte d, e d for uma instância de uma Entidade de Conteúdo Informacional Descritivo, e p prescrever uma entidade s, e d descrever c, e c for uma entidade que é causalmente relevante para a existência de s conforme prescrito por p.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/connected_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/connected_with">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:label xml:lang="pt-br">conectado com</rdfs:label>
+        <rdfs:label xml:lang="en">connected with</rdfs:label>
+        <skos:definition xml:lang="en">An immaterial entity im1 is connected with some immaterial entity im2 iff there exists some immaterial entity im3 that is common to both im1 and im2.</skos:definition>
+        <skos:definition xml:lang="pt-br">Uma entidade imaterial im1 está conectada com alguma entidade imaterial im2 se, e somente se, existir alguma entidade imaterial im3 que seja comum a ambas im1 e im2.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/GeospatialOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/delimits -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/delimits">
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_delimited_by"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DelimitingDomain"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+        <rdfs:label xml:lang="pt-br">delimita</rdfs:label>
+        <rdfs:label xml:lang="en">delimits</rdfs:label>
+        <skos:definition xml:lang="en">An instance of Delimiting Domain dd1 delimits some Organization o1 iff dd1 is the area within which o1 can legally operate.</skos:definition>
+        <skos:definition xml:lang="pt-br">Uma instância de Domínio Delimitador dd1 delimita alguma Organização o1 se, e somente se, dd1 for a área dentro da qual o1 pode operar legalmente.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/describes_condition -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/describes_condition">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="pt-br">descreve condição</rdfs:label>
+        <rdfs:label xml:lang="en">describes condition</rdfs:label>
+        <skos:definition xml:lang="pt-br">
+        p descreve_condição c se e somente se p for uma instância de uma Especificação de Desempenho, 
+        e p possuir a parte d, e d for uma instância de uma Entidade de Conteúdo Informacional Descritiva, 
+        e p prescrever uma entidade s, e d descrever c, e c for uma entidade causalmente relevante para 
+        a existência de s conforme prescrito por p.
+    </skos:definition>
+        <skos:definition xml:lang="en">
+        p describes_condition c iff p is an instance of a Performance Specification, and p has part d, 
+        and d is an instance of a Descriptive Information Content Entity, and p prescribes an entity s, 
+        and d describes c, and c is an entity that is causally relevant to s existing as prescribed by p.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_accessory -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_accessory">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has accessory</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tem acessório</rdfs:label>
+        <skos:definition xml:lang="en">x has_accessory y iff x is an instance of Process and y is an instance of Agent, such that y assists another agent in the commission of x, and y was not located at the location of x when x occurred, and y was not an agent_in x.</skos:definition>
+        <skos:definition xml:lang="pt-br">x tem_acessório y se e somente se x for uma instância de Processo e y for uma instância de Agente, de modo que y auxilie outro agente na comissão de x, e y não estava localizado no local de x quando x ocorreu, e y não era um agente_em x.</skos:definition>
+        <cco:definition_source>http://en.wikipedia.org/wiki/Accessory_(legal_term)</cco:definition_source>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_accomplice -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_accomplice">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has accomplice</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui cúmplice</rdfs:label>
+        <skos:definition xml:lang="en">A Processual Entity p1 has_accomplice some agent a1 iff a1 assists in the commission of p1, is located at the location of p1, but is not agent_in p1.</skos:definition>
+        <skos:definition xml:lang="pt-br">Uma Entidade Processual p1 possui cúmplice algum agente a1 se, e somente se, a1 auxilia na execução de p1, está localizado no mesmo local de p1, mas não é um agente em p1.</skos:definition>
+        <cco:definition_source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/w/index.php?title=Accomplice&amp;oldid=1002047204</cco:definition_source>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_affiliate -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_affiliate">
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_affiliated_with"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Agent"/>
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Agent"/>
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+                    <rdf:Description rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has affiliate</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui afiliado</rdfs:label>
+        <skos:definition xml:lang="en">x is_affiliated_with y iff x and y are instances of Agent, such that they have any kind of social or business relationship.</skos:definition>
+        <skos:definition xml:lang="pt-br">x possui afiliado y se, e somente se, x e y são instâncias de Agente, de modo que tenham algum tipo de relação social ou comercial.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_agent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_agent">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has agent</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui agente</rdfs:label>
+        <skos:definition xml:lang="en">x has_agent y iff x is an instance of Process and y is an instance of Agent, such that y is causally active in x.</skos:definition>
+        <skos:definition xml:lang="pt-br">x possui agente y se, e somente se, x é uma instância de Processo e y é uma instância de Agente, de modo que y esteja causalmente ativo em x.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_capability -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_capability">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Agent"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/AgentCapability"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has capability</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui capacidade</rdfs:label>
+        <skos:definition xml:lang="en">x has_capability y iff x is an instance of Agent and y is an instance of Agent Capability, such that x bearer of y.</skos:definition>
+        <skos:definition xml:lang="pt-br">x possui capacidade y se, e somente se, x é uma instância de Agente e y é uma instância de Capacidade do Agente, de modo que x seja portador de y.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_input -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_input">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_input_of"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has input</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui entrada</rdfs:label>
+        <skos:definition xml:lang="en">y has_input x iff x is an instance of Continuant and y is an instance of Process, such that the presence of x at the beginning of y is a necessary condition for the start of y.</skos:definition>
+        <skos:definition xml:lang="pt-br">y possui entrada x se, e somente se, x for uma instância de Continuante e y for uma instância de Processo, tal que a presença de x no início de y seja uma condição necessária para o início de y.</skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology</cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_member_of_located_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_member_of_located_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_some_member_of_located_in"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has all members located in</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tem todos os membros localizados em</rdfs:label>
+        <skos:definition xml:lang="en">x has all members located in y iff x is an instance of Object Aggregate and y is an instance of independent continuant but not a spatial region, and every member of x is located in y.</skos:definition>
+        <skos:definition xml:lang="pt-br">x tem todos os membros localizados em y se, e somente se, x for uma instância de Agregado de Objetos e y for uma instância de Continuante Independente, mas não uma região espacial, e todos os membros de x estiverem localizados em y.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_object -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_object">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_object_of"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has object</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui objeto</rdfs:label>
+        <skos:definition xml:lang="en">If p is a process and c is a continuant, then p has object c if and only if p is performed by an agent and c is part of the projected state that agent intends to achieve by performing p.</skos:definition>
+        <skos:definition xml:lang="pt-br">Se p for um processo e c for um continuante, então p possui objeto c se, e somente se, p for realizado por um agente e c fizer parte do estado projetado que esse agente pretende alcançar ao executar p.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_output -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_output">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_output_of"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has output</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui saída</rdfs:label>
+        <skos:definition xml:lang="en">y has_output x iff x is an instance of Continuant and y is an instance of Process, such that the presence of x at the end of y is a necessary condition for the completion of y.</skos:definition>
+        <skos:definition xml:lang="pt-br">y possui saída x se, e somente se, x for uma instância de Continuante e y for uma instância de Processo, tal que a presença de x no final de y seja uma condição necessária para a conclusão de y.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_process_part -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_process_part">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000117"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has process part</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui parte de processo</rdfs:label>
+        <skos:definition xml:lang="en">x has_process_part y iff x and y are instances of Process, such that y occurs during the temporal interval of x, and y either provides an input to x or receives an output of x, or both.</skos:definition>
+        <skos:definition xml:lang="pt-br">x possui parte de processo y se, e somente se, x e y forem instâncias de Processo, de modo que y ocorra durante o intervalo temporal de x e y forneça uma entrada para x, receba uma saída de x, ou ambos.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_recipient -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_recipient">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/receives"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has recipient</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui destinatário</rdfs:label>
+        <skos:definition xml:lang="en">x has_recipient y iff y is an instance of Agent and x is an instance of Act Of Communication, such that y is the recipient and decoder of the InformationContentEntity intended for communication in x.</skos:definition>
+        <skos:definition xml:lang="pt-br">x possui destinatário y se, e somente se, y for uma instância de Agente e x for uma instância de Ato de Comunicação, tal que y seja o destinatário e decodificador da Entidade de Conteúdo Informacional destinada à comunicação em x.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_sender -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_sender">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/sends"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has sender</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui remetente</rdfs:label>
+        <skos:definition xml:lang="en">y has_sender x iff x is an instance of Agent and y is an instance of Act Of Communication, such that x is the initiator and encoder of the InformationContentEntity intended for communication in y.</skos:definition>
+        <skos:definition xml:lang="pt-br">y possui remetente x se, e somente se, x for uma instância de Agente e y for uma instância de Ato de Comunicação, tal que x seja o iniciador e codificador da Entidade de Conteúdo Informacional destinada à comunicação em y.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_some_member_of_located_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_some_member_of_located_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has some member located in</rdfs:label>
+        <rdfs:label xml:lang="pt-br">tem algum membro localizado em</rdfs:label>
+        <skos:definition xml:lang="en">x has some member located in y iff x is an instance of Object Aggregate and y is an instance of independent continuant but not a spatial region, and at least one member of x is located in y.</skos:definition>
+        <skos:definition xml:lang="pt-br">x tem algum membro localizado em y se, e somente se, x for uma instância de Agregado de Objetos e y for uma instância de Continuante Independente, mas não uma região espacial, e pelo menos um membro de x estiver localizado em y.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_subordinate_role -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_subordinate_role">
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_subordinate_role_to"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has subordinate role</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui papel subordinado</rdfs:label>
+        <skos:definition xml:lang="en">For all x,y,t: x has subordinate role y at t iff: x is an instance of Role at time t, and y is an instance of Role at time t, and there is some z such that x is realized by z and z is an instance of Process which creates, modifies, transfers, or eliminates some u such that u is a Process Regulation at time t, and u is addressed to the bearer of y.</skos:definition>
+        <skos:definition xml:lang="pt-br">Para todos x,y,t: x possui papel subordinado y em t se, e somente se, x for uma instância de Papel em t, e y for uma instância de Papel em t, e existir algum z tal que x seja realizado por z e z seja uma instância de Processo que cria, modifica, transfere ou elimina algum u, tal que u seja uma Regulação de Processo em t, e u seja direcionado ao portador de y.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/has_subsidiary -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/has_subsidiary">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/has_affiliate"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_subsidiary_of"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has subsidiary</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui subsidiária</rdfs:label>
+        <skos:definition xml:lang="en">An Organization o1 has_subsidiary Organization o2 iff o1 controls o2 by having the capacity to determine the outcome of decisions about o2&apos;s financial and operating policies.</skos:definition>
+        <skos:definition xml:lang="pt-br">Uma Organização o1 possui subsidiária Organização o2 se, e somente se, o1 controlar o2 tendo a capacidade de determinar o resultado das decisões sobre as políticas financeiras e operacionais de o2.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in_aggregate -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in_aggregate">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="pt-br">inerente ao agregado</rdfs:label>
+        <rdfs:label xml:lang="en">inheres in aggregate</rdfs:label>
+        <skos:definition xml:lang="en">x inheres_in_aggregate y iff x is an instance of Specifically Dependent Continuant and y is an instance of Object Aggregate and z is an instance of Object, such that z bearer_of x, and all other members of y are bearers of a unique instance of the same type as x.</skos:definition>
+        <skos:definition xml:lang="pt-br">x é inerente ao agregado y se, e somente se, x for uma instância de Continuante Especificamente Dependente e y for uma instância de Agregado de Objetos, e z for uma instância de Objeto, tal que z seja portador de x, e todos os outros membros de y sejam portadores de uma instância única do mesmo tipo que x.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/inhibited_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/inhibited_by">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">inhibited by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">inibido por</rdfs:label>
+        <skos:definition xml:lang="en">y inhibited_by x iff x and y are non-identical Processes, d is a Decrease of Realizable Entity, and x is_cause_of d, and r is a Realizable Entity, and d has_participant r, and r realized_in y.</skos:definition>
+        <skos:definition xml:lang="pt-br">y é inibido por x se, e somente se, x e y forem Processos distintos, d for uma Redução de Entidade Realizável, x for causa de d, r for uma Entidade Realizável, d tiver como participante r, e r for realizado em y.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/inhibits -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/inhibits">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">inhibits</rdfs:label>
+        <rdfs:label xml:lang="pt-br">inibe</rdfs:label>
+        <skos:definition xml:lang="en">x inhibits y iff x and y are non-identical Processes, d is a Decrease of Realizable Entity, and x is_cause_of d, and r is a Realizable Entity, and d has_participant r, and r realized_in y.</skos:definition>
+        <skos:definition xml:lang="pt-br">x inibe y se, e somente se, x e y forem Processos distintos, d for uma Redução de Entidade Realizável, x for causa de d, r for uma Entidade Realizável, d tiver como participante r, e r for realizado em y.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/instant_is_after -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/instant_is_after">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">instant is after</rdfs:label>
+        <rdfs:label xml:lang="pt-br">instante ocorre depois</rdfs:label>
+        <skos:definition xml:lang="en">A temporal instant t2 (a instance of a zero-dimensional temporal region) is after another temporal instant t1 iff there exists some instance of a temporal interval ti1 such that t1 is the starting instant of ti1 and t2 is the ending instant of ti1.</skos:definition>
+        <skos:definition xml:lang="pt-br">Um instante temporal t2 (uma instância de uma região temporal zero-dimensional) ocorre depois de outro instante temporal t1 se, e somente se, existir alguma instância de um intervalo temporal ti1, tal que t1 seja o instante inicial de ti1 e t2 seja o instante final de ti1.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/instant_is_before -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/instant_is_before">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">instant is before</rdfs:label>
+        <rdfs:label xml:lang="pt-br">instante ocorre antes</rdfs:label>
+        <skos:definition xml:lang="en">A temporal instant t1 (a instance of a zero-dimensional temporal region) is before another temporal instant t2 iff there exists some instance of a temporal interval ti1 such that t1 is the starting instant of ti1 and t2 is the ending instant of ti1.</skos:definition>
+        <skos:definition xml:lang="pt-br">Um instante temporal t1 (uma instância de uma região temporal zero-dimensional) ocorre antes de outro instante temporal t2 se, e somente se, existir alguma instância de um intervalo temporal ti1, tal que t1 seja o instante inicial de ti1 e t2 seja o instante final de ti1.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/interval_contained_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/interval_contained_by">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">interval contained by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">intervalo contido em</rdfs:label>
+        <skos:definition xml:lang="en">A Temporal Interval INT1 is contained by some Temporal Interval INT2 iff there exist Temporal Instants inst1, inst2, inst3, and inst4 such that inst1 is the starting instant of INT1, inst2 is the ending instant of INT1, inst3 is the starting instant of INT2, inst4 is the ending instant of INT2, inst3 is before or identical to inst1, inst2 is before or identical to inst4, and it is not the case that both inst3 is identical to inst1 and inst2 is identical to inst4.</skos:definition>
+        <skos:definition xml:lang="pt-br">Um Intervalo Temporal INT1 está contido em algum Intervalo Temporal INT2 se, e somente se, existirem Instantes Temporais inst1, inst2, inst3 e inst4, tal que inst1 seja o instante inicial de INT1, inst2 seja o instante final de INT1, inst3 seja o instante inicial de INT2, inst4 seja o instante final de INT2, inst3 ocorra antes ou seja idêntico a inst1, inst2 ocorra antes ou seja idêntico a inst4, e não seja o caso de inst3 ser idêntico a inst1 e inst2 ser idêntico a inst4.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_affected_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_affected_by">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is affected by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é afetado por</rdfs:label>
+        <skos:definition xml:lang="en">x is_affected_by y iff x is an instance of Continuant and y is an instance of Process, and y influences x in some manner, most often by producing a change in x.</skos:definition>
+        <skos:definition xml:lang="pt-br">x é afetado por y se, e somente se, x for uma instância de Continuante e y for uma instância de Processo, e y influenciar x de alguma maneira, geralmente produzindo uma mudança em x.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_affiliated_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_affiliated_with">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is affiliated with</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é afiliado a</rdfs:label>
+        <skos:definition xml:lang="en">x is_affiliated_with y iff x and y are instances of Agent, such that they have any kind of social or business relationship.</skos:definition>
+        <skos:definition xml:lang="pt-br">x é afiliado a y se, e somente se, x e y forem instâncias de Agente, de modo que tenham algum tipo de relação social ou comercial.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_cause_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_cause_of">
+        <rdfs:label xml:lang="en">is cause of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é causa de</rdfs:label>
+        <skos:definition xml:lang="en">x is_cause_of y iff x and y are instances of Occurrent, and y is a consequence of x.</skos:definition>
+        <skos:definition xml:lang="pt-br">x é causa de y se, e somente se, x e y forem instâncias de Ocorrente, e y for uma consequência de x.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_delimited_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_delimited_by">
+        <rdfs:label xml:lang="en">is delimited by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é delimitado por</rdfs:label>
+        <skos:definition xml:lang="en">An instance of Organization o1 is_delimited_by some Delimiting Domain dd1 iff dd1 is the area within which o1 can legally operate.</skos:definition>
+        <skos:definition xml:lang="pt-br">Uma instância de Organização o1 é delimitada por um Domínio Delimitador dd1 se, e somente se, dd1 for a área dentro da qual o1 pode operar legalmente.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_disrupted_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_disrupted_by">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is disrupted by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é interrompido por</rdfs:label>
+        <skos:definition xml:lang="en">Inverse of disrupts.</skos:definition>
+        <skos:definition xml:lang="pt-br">Inverso de disrupts.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_excerpted_from -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_excerpted_from">
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is excerpted from</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é extraído de</rdfs:label>
+        <skos:definition xml:lang="en">
+        An Information Bearing Entity b1 is excerpted from another Information Bearing Entity B2 iff b1 is part of some Information Bearing Entity B1 that is carrier of some Information Content Entity C1, B2 is carrier of some Information Content Entity C2, C1 is not identical with C2, b1 is carrier of some Information Content Entity c1, b2 is an Information Bearing Entity that is part of B2 and b2 is carrier of c1 (i.e. the same Information Content Entity as borne by b1).
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Uma Entidade Portadora de Informação b1 é extraída de outra Entidade Portadora de Informação B2 se, e somente se, b1 for parte de alguma Entidade Portadora de Informação B1 que é portadora de alguma Entidade de Conteúdo Informacional C1, B2 for portadora de alguma Entidade de Conteúdo Informacional C2, C1 não for idêntica a C2, b1 for portadora de alguma Entidade de Conteúdo Informacional c1, e existir uma Entidade Portadora de Informação b2 que seja parte de B2 e que seja portadora de c1 (ou seja, a mesma Entidade de Conteúdo Informacional que é portada por b1).
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_input_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_input_of">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is input of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é entrada de</rdfs:label>
+        <skos:definition xml:lang="en">
+        x is_input_of y iff x is an instance of Continuant and y is an instance of Process,
+        such that the presence of x at the beginning of y is a necessary condition for the start of y.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        x é_entrada_de y se e somente se x for uma instância de Continuante e y for uma instância de Processo,
+        tal que a presença de x no início de y seja uma condição necessária para o início de y.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_object_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_object_of">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is object of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é objeto de</rdfs:label>
+        <skos:definition xml:lang="en">
+        If p is a process and c is a continuant, then c is object of p if and only if the c is part of the projected state that the agent intends to achieve by performing p.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Se p for um processo e c for um continuante, então c é objeto de p se, e somente se, c for parte do estado projetado que o agente pretende alcançar ao realizar p.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_organizational_context_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_organizational_context_of">
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is organizational context of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é contexto organizacional de</rdfs:label>
+        <skos:definition xml:lang="en">
+        x is_organizational_context_of y iff x is an instance of an Organization and y is an instance of a Role and z is an instance of a Person, such that z&apos;s affiliation with x is a prerequisite for z bearing y, or x ascribes y to the bearer of y.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        x é contexto organizacional de y se, e somente se, x for uma instância de Organização e y for uma instância de Papel, e z for uma instância de Pessoa, de modo que a afiliação de z com x seja um pré-requisito para z assumir y, ou x atribua y ao portador de y.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_output_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_output_of">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000056"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is output of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é saída de</rdfs:label>
+        <skos:definition xml:lang="en">
+        x is_output_of y iff x is an instance of Continuant and y is an instance of Process, such that the presence of x at the end of y is a necessary condition for the completion of y.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        x é saída de y se, e somente se, x for uma instância de Continuante e y for uma instância de Processo, de modo que a presença de x no final de y seja uma condição necessária para a conclusão de y.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_permitted_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_permitted_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribed_by"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/permits"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActionRegulation"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is permitted by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é permitido por</rdfs:label>
+        <skos:definition xml:lang="en">
+        y is_permitted_by x at t iff: x is an instance of Process Regulation at time t, and y is an instance of Process at time t, and x prescribes that y may occur.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        y é permitido por x no tempo t se, e somente se, x for uma instância de Regulação de Processo no tempo t, y for uma instância de Processo no tempo t, e x prescrever que y pode ocorrer.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_predecessor_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_predecessor_of">
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_successor_of"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is predecessor of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é predecessor de</rdfs:label>
+        <skos:definition xml:lang="en">
+        A continuant c1 is a predecessor of some continuant c2 iff there is some process p1 and c1 is an input to p1 and c2 is an output of p1.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Um continuante c1 é predecessor de um continuante c2 se, e somente se, houver um processo p1 e c1 for uma entrada para p1 e c2 for uma saída de p1.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_prohibited_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_prohibited_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribed_by"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prohibits"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActionRegulation"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is prohibited by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é proibido por</rdfs:label>
+        <skos:definition xml:lang="en">
+        y is_prohibited_by x at t iff: x is an instance of Process Regulation at time t, and y is an instance of Process at time t, and x prescribes that y must not occur.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        y é proibido por x no tempo t se, e somente se, x for uma instância de Regulação de Processo no tempo t, y for uma instância de Processo no tempo t, e x prescrever que y não pode ocorrer.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_required_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_required_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribed_by"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/requires"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActionRegulation"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is required by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é requerido por</rdfs:label>
+        <skos:definition xml:lang="en">
+        y is_required_by x at t iff: x is an instance of Process Regulation at time t, and y is an instance of Process at time t, and x prescribes that y must occur.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        y é requerido por x no tempo t se, e somente se, x for uma instância de Regulação de Processo no tempo t, y for uma instância de Processo no tempo t, e x prescrever que y deve ocorrer.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_subject_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_subject_of">
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is subject of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é sujeito de</rdfs:label>
+        <skos:definition xml:lang="en">
+        A primitive relationship between an instance of an Entity and an instance of an Information Content Entity.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Uma relação primitiva entre uma instância de Entidade e uma instância de Entidade de Conteúdo Informacional.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_subordinate_role_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_subordinate_role_to">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is subordinate role to</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é papel subordinado a</rdfs:label>
+        <skos:definition xml:lang="en">
+        For all x,y,t: y is subordinate role to x at t iff: x is an instance of Role at time t, and y is an instance of Role at time t, and there is some z such that x is realized by z and z is an instance of Process which creates, modifies, transfers, or eliminates some u such that u is a Process Regulation at time t, and u is addressed to the bearer of y.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Para todos x, y, t: y é papel subordinado a x em t se, e somente se, x for uma instância de Papel em t, y for uma instância de Papel em t, e existir algum z tal que x seja realizado por z e z seja uma instância de Processo que cria, modifica, transfere ou elimina algum u tal que u seja uma Regulação de Processo em t e u seja direcionado ao portador de y.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_subsidiary_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_subsidiary_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_affiliated_with"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is subsidiary of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é subsidiária de</rdfs:label>
+        <skos:definition xml:lang="en">
+        An Organization o2 is_subsidiary_of Organization o1 iff o1 controls o2 by having the capacity to determine the outcome of decisions about o2&apos;s financial and operating policies.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Uma Organização o2 é subsidiária de uma Organização o1 se, e somente se, o1 controlar o2 por ter a capacidade de determinar o resultado das decisões sobre as políticas financeiras e operacionais de o2.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_successor_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_successor_of">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is successor of</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é sucessor de</rdfs:label>
+        <skos:definition xml:lang="en">
+        A continuant c2 is a successor of some continuant c1 iff there is some process p1 and c1 is an input to p1 and c2 is an output of p1. Inverse of is predecessor.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Um continuante c2 é sucessor de um continuante c1 se, e somente se, existir algum processo p1 tal que c1 seja uma entrada para p1 e c2 seja uma saída de p1. Inverso de é predecessor de.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_supervised_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_supervised_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_affiliated_with"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/supervises"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">is supervised by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">é supervisionado por</rdfs:label>
+        <skos:definition xml:lang="en">
+        A person p1 is supervised by a person p2 by virtue of p1 being directed, managed, or overseen by p2.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Uma pessoa p1 é supervisionada por uma pessoa p2 pelo fato de p1 ser direcionado, gerenciado ou supervisionado por p2.
+    </skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/language_used_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/language_used_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribes"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/uses_language"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Language"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">language used in</rdfs:label>
+        <rdfs:label xml:lang="pt-br">língua usada em</rdfs:label>
+        <skos:definition xml:lang="en">
+        x language_used_by y iff y is an instance of Information Bearing Entity and x is an instance of Language,
+        such that the literal value of y is a string that is encoded according to the syntax of x.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        x usado_por_linguagem y se e somente se y for uma instância de Entidade Portadora de Informação e x for uma instância de Linguagem,
+        tal que o valor literal de y seja uma string codificada de acordo com a sintaxe de x.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/partially_overlaps_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/partially_overlaps_with">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/connected_with"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/GeospatialOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">partially overlaps with</rdfs:label>
+        <rdfs:label xml:lang="pt-br">se sobrepõe parcialmente a</rdfs:label>
+        <skos:definition xml:lang="en">
+        An immaterial entity im1 partially overlaps with some immaterial entity im2 iff im1 overlaps with im2 and im1 is not a spatial part of im2 and im2 is not a spatial part of im1.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        Uma entidade imaterial im1 se sobrepõe parcialmente a outra entidade imaterial im2 se e somente se im1 sobrepõe im2 e im1 não é parte espacial de im2, e im2 não é parte espacial de im1.
+    </skos:definition>
+        <skos:scopeNote xml:lang="pt-br">
+        Dada uma interpretação temporal mais forte, esta propriedade pode ser simétrica. Para mais informações, consulte https://github.com/BFO-ontology/BFO-2020/tree/master/src/owl/temporal%20extensions.
+    </skos:scopeNote>
+        <skos:scopeNote xml:lang="en">
+        Given a stronger temporal interpretation, this property may be symmetric. For more info please refer to https://github.com/BFO-ontology/BFO-2020/tree/master/src/owl/temporal%20extensions.
+    </skos:scopeNote>
+        <cco:definition_source xml:lang="en">
+        Randell, D. A., Cui, Z. and Cohn, A. G.: 1992, &quot;A spatial logic based on regions and connection,&quot; Proc. 3rd Int. Conf. on Knowledge Representation and Reasoning, Morgan Kaufmann, San Mateo, pp. 165-176. Available at: https://www.dpi.inpe.br/gilberto/references/cohn_rcc.pdf
+    </cco:definition_source>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/GeospatialOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/permits -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/permits">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribes"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActionRegulation"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="pt-br">permite</rdfs:label>
+        <rdfs:label xml:lang="en">permits</rdfs:label>
+        <skos:definition xml:lang="pt-br">
+        x permite y no tempo t se e somente se: x for uma instância de Regulação de Processo no tempo t, 
+        e y for uma instância de Processo no tempo t, e x prescrever que y pode ocorrer.
+    </skos:definition>
+        <skos:definition xml:lang="en">
+        x permits y at t iff: x is an instance of Process Regulation at time t, and y is an instance of Process at time t, and x prescribes that y may occur.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/prescribed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/prescribed_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_subject_of"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribes"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">prescribed by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">prescrito por</rdfs:label>
+        <skos:definition xml:lang="en">
+        x prescribed_by y iff y is an instance of Information Content Entity and x is an instance of Entity, such that y serves as a rule or guide for x if x is an Occurrent, or y serves as a model for x if x is a Continuant.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        x é prescrito por y se e somente se y for uma instância de Entidade de Conteúdo Informacional e x for uma instância de Entidade, 
+        tal que y serve como uma regra ou guia para x se x for um Ocorrente, ou y serve como um modelo para x se x for um Continuante.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/prescribes -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/prescribes">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000136"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="pt-br">prescreve</rdfs:label>
+        <rdfs:label xml:lang="en">prescribes</rdfs:label>
+        <skos:definition xml:lang="pt-br">
+        x prescreve y se e somente se x for uma instância de Entidade de Conteúdo Informacional e y for uma instância de Entidade,
+        tal que x serve como uma regra ou guia para y se y for um Ocorrente, ou x serve como um modelo para y se y for um Continuante.
+    </skos:definition>
+        <skos:definition xml:lang="en">
+        x prescribes y iff x is an instance of Information Content Entity and y is an instance of Entity, such that x serves as a rule or guide for y if y is an Occurrent, or x serves as a model for y if y is a Continuant.
+    </skos:definition>
+        <skos:example xml:lang="en">A blueprint prescribes some artifact or facility by being a model for it.</skos:example>
+        <skos:example xml:lang="en">A professional code of conduct prescribes some realizations of a profession (role) by giving rules for how the bearer should act in those realizations.</skos:example>
+        <skos:example xml:lang="en">An operations plan prescribes an operation by enumerating the tasks that need to be performed in order to achieve the objectives of the operation.</skos:example>
+        <skos:example xml:lang="pt-br">Um código de conduta profissional prescreve algumas realizações de uma profissão (papel) ao estabelecer regras sobre como o portador deve agir nessas realizações.</skos:example>
+        <skos:example xml:lang="pt-br">Um plano operacional prescreve uma operação ao enumerar as tarefas que precisam ser executadas para atingir os objetivos da operação.</skos:example>
+        <skos:example xml:lang="pt-br">Um projeto arquitetônico prescreve um artefato ou instalação ao servir como modelo para ele.</skos:example>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/process_started_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/process_started_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/caused_by"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/process_starts"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">process started by</rdfs:label>
+        <rdfs:label xml:lang="pt-br">processo iniciado por</rdfs:label>
+        <skos:definition xml:lang="en">
+        x process_started_by y iff x and y are instances of processes, and x is caused_by y, and i is an instance of a temporal instant, and r is an instant of a temporal interval, and x has starting instance i, and y occurs on r, and r interval contains i.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        x processo_iniciado_por y se e somente se x e y forem instâncias de processos, x for causado_por y, i for uma instância de um instante temporal, r for um instante de um intervalo temporal, x tiver um instante de início i, y ocorrer em r, e o intervalo r conter i.
+    </skos:definition>
+        <skos:scopeNote xml:lang="en">A process x is started by another process y when y causes x while y is still occurring.</skos:scopeNote>
+        <skos:scopeNote xml:lang="pt-br">Um processo x é iniciado por outro processo y quando y causa x enquanto y ainda está ocorrendo.</skos:scopeNote>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/process_starts -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/process_starts">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_cause_of"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">process starts</rdfs:label>
+        <rdfs:label xml:lang="pt-br">processo inicia</rdfs:label>
+        <skos:definition xml:lang="pt-br">
+        x inicia y se e somente se x e y forem instâncias de processos, x for causa_de y, i for uma instância de um instante temporal, r for um instante de um intervalo temporal, y tiver um instante de início i, x ocorrer em r, e o intervalo r conter i.
+    </skos:definition>
+        <skos:definition xml:lang="en">
+        x process_starts y iff x and y are instances of processes, and x is_cause_of y, and i is an instance of a temporal instant, and r is an instant of a temporal interval, and y has starting instance i, and x occurs on r, and r interval contains i.
+    </skos:definition>
+        <skos:scopeNote xml:lang="en">A process x starts another process y when x causes y while x is still occurring.</skos:scopeNote>
+        <skos:scopeNote xml:lang="pt-br">Um processo x inicia outro processo y quando x causa y enquanto x ainda está ocorrendo.</skos:scopeNote>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/prohibits -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/prohibits">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribes"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/ActionRegulation"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">prohibits</rdfs:label>
+        <rdfs:label xml:lang="pt-br">proíbe</rdfs:label>
+        <skos:definition xml:lang="en">
+        x prohibits y at t iff: x is an instance of Process Regulation at time t, and y is an instance of Process at time t, and x prescribes that some y must not occur.
+    </skos:definition>
+        <skos:definition xml:lang="pt-br">
+        x proíbe y no tempo t se e somente se: x for uma instância de Regulação de Processo no tempo t, 
+        e y for uma instância de Processo no tempo t, e x prescrever que y não deve ocorrer.
+    </skos:definition>
+        <skos:scopeNote xml:lang="pt-br">
+        Dada uma interpretação temporal mais forte, esta propriedade pode ser assimétrica e irreflexiva.
+        Para mais informações, consulte https://github.com/BFO-ontology/BFO-2020/tree/master/src/owl/temporal%20extensions.
+    </skos:scopeNote>
+        <skos:scopeNote xml:lang="en">
+        Given a stronger temporal interpretation, this property may be asymmetric and irreflexive. 
+        For more info please refer to https://github.com/BFO-ontology/BFO-2020/tree/master/src/owl/temporal%20extensions.
+    </skos:scopeNote>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/quality_of_aggregate -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/quality_of_aggregate">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/inheres_in_aggregate"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000027"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="pt-br">qualidade do agregado</rdfs:label>
+        <rdfs:label xml:lang="en">quality of aggregate</rdfs:label>
+        <skos:definition xml:lang="pt-br">
+        x qualidade_do_agregado y se e somente se y for uma instância de Agregado de Objetos e x for uma instância de Qualidade, e x inerente_em_agregado y.
+    </skos:definition>
+        <skos:definition xml:lang="en">
+        x quality_of_aggregate y iff y is an instance of Object Aggregate and x is an instance of Quality, and x inheres_in_aggregate y.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/ExtendedRelationOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/receives -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/receives"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/requires -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/requires"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/sends -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/sends"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/supervises -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/supervises"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/uses -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/uses">
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="pt-br">usa</rdfs:label>
+        <rdfs:label xml:lang="en">uses</rdfs:label>
+        <skos:definition xml:lang="pt-br">
+        x usa y se e somente se x for uma instância de um Agente e y for uma instância de uma Entidade Material,
+        tal que ambos, x e y, participam de alguma instância de um Processo onde x tenta atingir um objetivo
+        manipulando, empregando ou aproveitando algum atributo de y.
+    </skos:definition>
+        <skos:definition xml:lang="en">
+        x uses y iff x is an instance of an Agent and y is an instance of a Material Entity,
+        such that both x and y participate in some instance of a Process wherein x attempts to accomplish a goal
+        by manipulating, deploying, or leveraging some attribute of y.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/uses_language -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/uses_language">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/prescribed_by"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Language"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="pt-br">usa linguagem</rdfs:label>
+        <rdfs:label xml:lang="en">uses language</rdfs:label>
+        <skos:definition xml:lang="pt-br">
+        x usa_linguagem y se e somente se x for uma instância de uma Entidade Portadora de Informação e y for uma instância de uma Linguagem,
+        tal que o valor literal de x seja uma string codificada de acordo com a sintaxe de y.
+    </skos:definition>
+        <skos:definition xml:lang="en">
+        x uses_language y iff x is an instance of an Information Bearing Entity and y is an instance of a Language
+        such that the literal value of x is a string that is encoded according to the syntax of y.
+    </skos:definition>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">
+        http://www.ontologyrepository.com/CommonCoreOntologies/Mid/InformationEntityOntology
+    </cco:is_curated_in_ontology>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001794 -->
+
+    <owl:ObjectProperty rdf:about="https://www.commoncoreontologies.org/ont00001794">
+        <rdfs:subPropertyOf rdf:resource="https://www.commoncoreontologies.org/ont00001977"/>
+        <owl:inverseOf rdf:resource="https://www.commoncoreontologies.org/ont00001815"/>
+        <rdfs:domain rdf:resource="https://www.commoncoreontologies.org/ont00001180"/>
+        <rdfs:range rdf:resource="https://www.commoncoreontologies.org/ont00001180"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.commoncoreontologies.org/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <rdfs:label xml:lang="en">has subsidiary</rdfs:label>
+        <rdfs:label xml:lang="pt-br">possui subsidiária</rdfs:label>
+        <skos:definition xml:lang="en">An Organization o1 has_subsidiary Organization o2 iff o1 controls o2 by having the capacity to determine the outcome of decisions about o2&apos;s financial and operating policies.</skos:definition>
+        <skos:definition xml:lang="pt-br">Uma organização o1 possui subsidiária o2 se e somente se o1 controla o2, tendo a capacidade de determinar o resultado das decisões sobre as políticas financeiras e operacionais de o2.</skos:definition>
+        <cco:ont00001754>http://www.austlii.edu.au/legis/cth/consol_act/ca2001172/s50aa.html</cco:ont00001754>
+        <cco:ont00001760 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.commoncoreontologies.org/AgentOntology</cco:ont00001760>
+    </owl:ObjectProperty>
+    
+
+
+
+    
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/is_supervised_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/is_supervised_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/is_affiliated_with"/>
+        <owl:inverseOf rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/supervises"/>
+        <rdfs:domain rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+        <rdfs:range rdf:resource="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+        <obo:IAO_0000412 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.commoncoreontologies.org/AgentOntology</obo:IAO_0000412>
+        <obo:ONTONEO_10000002 xml:lang="pt-br">Fernanda Farinelli</obo:ONTONEO_10000002>
+        <cco:definition_source>http://en.wiktionary.org/wiki/supervise)</cco:definition_source>
+        <cco:is_curated_in_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ontologyrepository.com/CommonCoreOntologies/Mid/AgentOntology</cco:is_curated_in_ontology>
+        <rdfs:label xml:lang="en">is supervised by</rdfs:label>
+        <skos:definition xml:lang="en">A person p1 is supervised by a person p2 by virtue of p1 being directed, managed, or overseen by p2.</skos:definition>
+        <rdfs:label xml:lang="pt-br">é supervisionado por</rdfs:label>
+        <skos:definition xml:lang="pt-br">Uma pessoa p1 é supervisionada por uma pessoa p2 pelo fato de p1 ser direcionada, gerenciada ou acompanhada por p2.</skos:definition>
+    </owl:ObjectProperty>
+
+    <!-- https://www.commoncoreontologies.org/ont00001815 -->
+
+    <owl:ObjectProperty rdf:about="https://www.commoncoreontologies.org/ont00001815"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001939 -->
+
+    <owl:ObjectProperty rdf:about="https://www.commoncoreontologies.org/ont00001939"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001943 -->
+
+    <owl:ObjectProperty rdf:about="https://www.commoncoreontologies.org/ont00001943"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001977 -->
+
+    <owl:ObjectProperty rdf:about="https://www.commoncoreontologies.org/ont00001977"/>
     
 
 
@@ -6346,9 +7744,47 @@ for now.</obo:IAO_0000116>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/OBI_0000272 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000272">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <obo:IAO_0000111 xml:lang="en">protocol</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">PCR protocol, has objective specification, amplify DNA fragment of interest, and has action specification describes the amounts of experimental reagents used (e..g. buffers, dNTPS, enzyme), and the temperature and cycle time settings for running the PCR.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">OBI branch derived + wikipedia (http://en.wikipedia.org/wiki/Protocol_%28natural_sciences%29)</obo:IAO_0000119>
+        <obo:OBI_0001847>study protocol</obo:OBI_0001847>
+        <rdfs:label xml:lang="en">protocol</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/OBI_0000338 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000338"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000338">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001909"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>interpreting data</obo:IAO_0000111>
+        <obo:IAO_0000112>Concluding that a gene is upregulated in a tissue sample based on the band intensity in a western blot.  Concluding that a patient has a infection based on measurement of an elevated body temperature and reported headache. Concluding that there were problems in an investigation because data from PCR and microarray are conflicting. Concluding that &apos;defects in gene XYZ cause cancer due to improper DNA repair&apos; based on data from experiments in that study that gene XYZ is involved in DNA repair, and the conclusion of a previous study that cancer patients have an increased number of mutations in this gene.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A planned process in which data gathered in an investigation is evaluated in the context of existing knowledge with the objective to generate more general conclusions or to conclude that the data does not allow one to draw general conclusion</obo:IAO_0000115>
+        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
+        <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
+        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">drawing a conclusion based on data</rdfs:label>
+    </owl:Class>
     
 
 
@@ -6386,7 +7822,62 @@ for now.</obo:IAO_0000116>
 
     <!-- http://purl.obolibrary.org/obo/OBI_0000471 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000471"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000471">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000059"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <obo:IAO_0000111>study design execution</obo:IAO_0000111>
+        <obo:IAO_0000112>injecting a mouse with PBS solution, weighing it, and recording the weight according to a study design.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">a planned process that carries out a study design</obo:IAO_0000115>
+        <obo:IAO_0000116>removed axiom has_part some (assay or &apos;data transformation&apos;) per discussion on protocol application mailing list to improve reasoner performance. The axiom is still desired.</obo:IAO_0000116>
+        <obo:IAO_0000119>branch derived</obo:IAO_0000119>
+        <obo:IAO_0000232>6/11/9: edited at workshop. Used to be: study design execution is a process with the objective to generate data according to a concretized study design. The execution of a study design is part of an investigation, and minimally consists of an assay or data transformation.</obo:IAO_0000232>
+        <rdfs:label>study design execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001909 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001909">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000124"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111>conclusion based on data</obo:IAO_0000111>
+        <obo:IAO_0000112>The conclusion that a gene is upregulated in a tissue sample based on the band intensity in a western blot. The conclusion that a patient has a infection based on measurement of an elevated body temperature and reported headache. The conclusion that there were problems in an investigation because data from PCR and microarray are conflicting.
+The following are NOT conclusions based on data: data themselves; results from pure mathematics, e.g. &quot;13 is prime&quot;.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">An information content entity that is inferred from data.</obo:IAO_0000115>
+        <obo:IAO_0000116>In the Philly 2013 workshop, we recognized the limitations of &quot;conclusion textual entity&quot;, and we introduced this as more general. The need for the &apos;textual entity&apos; term going forward is up for future debate.</obo:IAO_0000116>
+        <obo:IAO_0000117>Group:2013 Philly Workshop group</obo:IAO_0000117>
+        <obo:IAO_0000119>Group:2013 Philly Workshop group</obo:IAO_0000119>
+        <rdfs:label>conclusion based on data</rdfs:label>
+    </owl:Class>
     
 
 
@@ -6464,7 +7955,24 @@ This issue is outside the scope of OBI.</obo:IAO_0000116>
 
     <!-- http://purl.obolibrary.org/obo/OBI_0500000 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0500000"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0500000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000111 xml:lang="en">study design</obo:IAO_0000111>
+        <obo:IAO_0000112 xml:lang="en">a matched pairs study design describes criteria by which subjects are identified as pairs which then undergo the same protocols, and the data generated is analyzed by comparing the differences between the paired subjects, which constitute the results of the executed study design.</obo:IAO_0000112>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of an investigation and is realized during a study design execution.</obo:IAO_0000115>
+        <obo:IAO_0000116>Editor note: there is at least an implicit restriction on the kind of data transformations that can be done based on the measured data available.</obo:IAO_0000116>
+        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">experimental design</obo:IAO_0000118>
+        <obo:IAO_0000232 xml:lang="en">rediscussed at length (MC/JF/BP). 12/9/08). The definition was clarified to differentiate it from protocol.</obo:IAO_0000232>
+        <rdfs:label xml:lang="en">study design</rdfs:label>
+    </owl:Class>
     
 
 
@@ -6488,127 +7996,9 @@ Relates to the creation of a class &apos;selection rule&apos;</obo:IAO_0000116>
         <rdfs:label xml:lang="en">acquisition</rdfs:label>
         <rdfs:label xml:lang="pt-br">aquisição</rdfs:label>
     </owl:Class>
-     <!-- http://purl.obolibrary.org/obo/OBI_0000338 -->
+    
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000338">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000293"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000299"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001909"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>interpreting data</obo:IAO_0000111>
-        <obo:IAO_0000112>Concluding that a gene is upregulated in a tissue sample based on the band intensity in a western blot.  Concluding that a patient has a infection based on measurement of an elevated body temperature and reported headache. Concluding that there were problems in an investigation because data from PCR and microarray are conflicting. Concluding that &apos;defects in gene XYZ cause cancer due to improper DNA repair&apos; based on data from experiments in that study that gene XYZ is involved in DNA repair, and the conclusion of a previous study that cancer patients have an increased number of mutations in this gene.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A planned process in which data gathered in an investigation is evaluated in the context of existing knowledge with the objective to generate more general conclusions or to conclude that the data does not allow one to draw general conclusion</obo:IAO_0000115>
-        <obo:IAO_0000117>PERSON: Bjoern Peters</obo:IAO_0000117>
-        <obo:IAO_0000117>PERSON: Jennifer Fostel</obo:IAO_0000117>
-        <obo:IAO_0000119>Bjoern Peters</obo:IAO_0000119>
-        <rdfs:label xml:lang="en">drawing a conclusion based on data</rdfs:label>
-    </owl:Class>
-	
-    <!-- http://purl.obolibrary.org/obo/OBI_0001909 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001909">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000124"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0000312"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000338"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111>conclusion based on data</obo:IAO_0000111>
-        <obo:IAO_0000112>The conclusion that a gene is upregulated in a tissue sample based on the band intensity in a western blot. The conclusion that a patient has a infection based on measurement of an elevated body temperature and reported headache. The conclusion that there were problems in an investigation because data from PCR and microarray are conflicting.
-The following are NOT conclusions based on data: data themselves; results from pure mathematics, e.g. &quot;13 is prime&quot;.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">An information content entity that is inferred from data.</obo:IAO_0000115>
-        <obo:IAO_0000116>In the Philly 2013 workshop, we recognized the limitations of &quot;conclusion textual entity&quot;, and we introduced this as more general. The need for the &apos;textual entity&apos; term going forward is up for future debate.</obo:IAO_0000116>
-        <obo:IAO_0000117>Group:2013 Philly Workshop group</obo:IAO_0000117>
-        <obo:IAO_0000119>Group:2013 Philly Workshop group</obo:IAO_0000119>
-        <rdfs:label>conclusion based on data</rdfs:label>
-    </owl:Class>	
-	
-	
-	
-	
-    <!-- http://purl.obolibrary.org/obo/OBI_0000272 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000272">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
-        <obo:IAO_0000111 xml:lang="en">protocol</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">PCR protocol, has objective specification, amplify DNA fragment of interest, and has action specification describes the amounts of experimental reagents used (e..g. buffers, dNTPS, enzyme), and the temperature and cycle time settings for running the PCR.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</obo:IAO_0000115>
-        <obo:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">OBI branch derived + wikipedia (http://en.wikipedia.org/wiki/Protocol_%28natural_sciences%29)</obo:IAO_0000119>
-        <obo:OBI_0001847>study protocol</obo:OBI_0001847>
-        <rdfs:label xml:lang="en">protocol</rdfs:label>
-    </owl:Class>
-	
-    <!-- http://purl.obolibrary.org/obo/OBI_0000471 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000471">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                        <owl:someValuesFrom>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000059"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
-                            </owl:Restriction>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
-        <obo:IAO_0000111>study design execution</obo:IAO_0000111>
-        <obo:IAO_0000112>injecting a mouse with PBS solution, weighing it, and recording the weight according to a study design.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">a planned process that carries out a study design</obo:IAO_0000115>
-        <obo:IAO_0000116>removed axiom has_part some (assay or &apos;data transformation&apos;) per discussion on protocol application mailing list to improve reasoner performance. The axiom is still desired.</obo:IAO_0000116>
-        <obo:IAO_0000119>branch derived</obo:IAO_0000119>
-        <obo:IAO_0000232>6/11/9: edited at workshop. Used to be: study design execution is a process with the objective to generate data according to a concretized study design. The execution of a study design is part of an investigation, and minimally consists of an assay or data transformation.</obo:IAO_0000232>
-        <rdfs:label>study design execution</rdfs:label>
-    </owl:Class>
-
-    <!-- http://purl.obolibrary.org/obo/OBI_0500000 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0500000">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000111 xml:lang="en">study design</obo:IAO_0000111>
-        <obo:IAO_0000112 xml:lang="en">a matched pairs study design describes criteria by which subjects are identified as pairs which then undergo the same protocols, and the data generated is analyzed by comparing the differences between the paired subjects, which constitute the results of the executed study design.</obo:IAO_0000112>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000115 xml:lang="en">A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of an investigation and is realized during a study design execution.</obo:IAO_0000115>
-        <obo:IAO_0000116>Editor note: there is at least an implicit restriction on the kind of data transformations that can be done based on the measured data available.</obo:IAO_0000116>
-        <obo:IAO_0000117>PERSON: Chris Stoeckert</obo:IAO_0000117>
-        <obo:IAO_0000118 xml:lang="en">experimental design</obo:IAO_0000118>
-        <obo:IAO_0000232 xml:lang="en">rediscussed at length (MC/JF/BP). 12/9/08). The definition was clarified to differentiate it from protocol.</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">study design</rdfs:label>
-    </owl:Class>
-	
     <!-- http://purl.obolibrary.org/obo/OBI_0600010 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0600010">
@@ -6650,6 +8040,66 @@ The following are NOT conclusions based on data: data themselves; results from p
     
 
 
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/ActionRegulation -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/ActionRegulation"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Agent -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Agent"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/AgentCapability -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/AgentCapability"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/DelimitingDomain -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/DelimitingDomain"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/DirectiveInformationContentEntity"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InformationBearingEntity"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/InformationContentEntity"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Language -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Language"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Organization -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Organization"/>
+    
+
+
+    <!-- http://www.ontologyrepository.com/CommonCoreOntologies/Person -->
+
+    <owl:Class rdf:about="http://www.ontologyrepository.com/CommonCoreOntologies/Person"/>
+    
+
+
     <!-- https://ontologia.ibict.br/ontologias/ontogovbr/ONTOGOVBR_00000000 -->
 
     <owl:Class rdf:about="https://ontologia.ibict.br/ontologias/ontogovbr/ONTOGOVBR_00000000">
@@ -6657,6 +8107,18 @@ The following are NOT conclusions based on data: data themselves; results from p
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-02-02T21:06:42Z</dc:date>
         <rdfs:label xml:lang="pt-br">Teste</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001180 -->
+
+    <owl:Class rdf:about="https://www.commoncoreontologies.org/ont00001180"/>
+    
+
+
+    <!-- https://www.commoncoreontologies.org/ont00001262 -->
+
+    <owl:Class rdf:about="https://www.commoncoreontologies.org/ont00001262"/>
     
 
 
