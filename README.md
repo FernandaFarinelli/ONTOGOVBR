@@ -23,4 +23,4 @@ O versionamento da OntoGovBR segue diretrizes específicas para garantir a consi
 
 ## 🛠️Engenheiras de Ontologia:
 - Sara Maciel Soares
-- Fernanda Farinelli
+- Dra. Fernanda Farinelli (Orientadora)
